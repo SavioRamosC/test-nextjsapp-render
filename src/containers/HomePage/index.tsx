@@ -7,11 +7,11 @@ export default function HomePage({ posts }: HomeProps) {
       {posts.map((post) => (
         <div className="m-auto group" key={post.attributes.slug}>
           <div>
-            <h2 className="py-4 flex items-center justify-center group-hover:cursor-pointer ">
+            <h2 className="py-4 text-center md:text-left flex items-center justify-center md:justify-start group-hover:cursor-pointer">
               {post.attributes.title}
             </h2>
             <img
-              className="h-40 w-64 hover:cursor-pointer border-solid border-opacity-5 border-secondary  hover:border-2"
+              className="h-40 w-full hover:cursor-pointer border-solid border-opacity-5 border-secondary hover:border-2"
               src={post.attributes.cover.data.attributes.url}
               alt={post.attributes.cover.data.attributes.name}
             />

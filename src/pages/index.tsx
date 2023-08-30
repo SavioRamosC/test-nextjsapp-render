@@ -4,12 +4,14 @@ import { getAllPosts } from '@/data/posts/get-all-posts';
 import { HomeProps } from '@/types/home-props';
 import { GetStaticProps } from 'next';
 import '../app/globals.css';
+import Footer from '@/components/Footer';
 
 export default function Home({ posts }: HomeProps) {
   return (
-    <>
+    <div className="min-h-screen">
       <Header></Header>
       <HomePage posts={posts}></HomePage>
+      <Footer></Footer>
       {/* <div className="flex justify-center group">
         <h2 className="py-4 flex items-center justify-center transition-all duration-1000 group-hover:text-secondary">
           haar
@@ -19,7 +21,7 @@ export default function Home({ posts }: HomeProps) {
           src="	https://res.cloudinary.com/dlaaz49my/image/upload/v1692836547/js_simple_1e52b9a734.png"
         />
       </div> */}
-    </>
+    </div>
   );
 }
 
