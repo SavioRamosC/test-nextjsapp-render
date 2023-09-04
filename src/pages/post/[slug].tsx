@@ -54,10 +54,19 @@ export const getStaticProps: GetStaticProps<PostProps> = async (ctx) => {
 
   const posts = await getPost(slug);
 
+  if (!posts || posts.length === 0) {
+    console.log(`Post not found for slug: ${slug}`);
+    return {
+      notFound: true,
+    };
+  }
+
+  const post = posts[0];
+
   console.log(`Current slug: ${posts[0].attributes.title}`);
 
   return {
-    props: { post: posts[0] },
+    props: { post },
     revalidate: 3600,
   };
 };
