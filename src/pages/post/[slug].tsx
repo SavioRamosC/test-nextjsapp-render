@@ -50,6 +50,8 @@ export const getStaticProps: GetStaticProps<PostProps> = async (ctx) => {
     };
   }
 
+  console.log(`Building slug: ${slug}`);
+
   const posts = await getPost(slug);
 
   return {
