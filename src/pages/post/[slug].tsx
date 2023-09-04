@@ -45,6 +45,7 @@ export const getStaticProps: GetStaticProps<PostProps> = async (ctx) => {
   const slug = ctx.params?.slug as string;
 
   if (!slug) {
+    console.log('haaaaaar');
     return {
       notFound: true,
     };
