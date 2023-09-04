@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps<PostProps> = async (ctx) => {
 
   const posts = await getPost(slug);
 
-  console.log(`Current slug: ${posts[0]}`);
+  console.log(`Current slug: ${posts[0].attributes.title}`);
 
   return {
     props: { post: posts[0] },
