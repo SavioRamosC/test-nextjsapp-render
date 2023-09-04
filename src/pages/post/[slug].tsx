@@ -7,11 +7,14 @@ import { getAllPosts } from '@/data/posts/get-all-posts';
 import { getPost } from '@/data/posts/get-post';
 import { PostProps } from '@/types/post-props';
 import { GetStaticPaths, GetStaticProps } from 'next';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 
 export default function DynamicPost({ post }: PostProps) {
-  // const router = useRouter();
-  /* <p>{router.query.slug}</p> */
+  const router = useRouter();
+
+  if (router.isFallback) {
+    <h1>Loading...</h1>;
+  }
 
   return (
     <div className="min-h-screen">
@@ -34,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
