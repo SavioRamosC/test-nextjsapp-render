@@ -1,12 +1,12 @@
+import '../app/globals.css';
 import Header from '@/components/Header/index';
 import HomePage from '@/containers/HomePage';
 import { getAllPosts } from '@/data/posts/get-all-posts';
-import { HomeProps } from '@/types/home-props';
 import { GetStaticProps } from 'next';
-import '../app/globals.css';
+import { PostArrayProps } from '@/types/post-props';
 import Footer from '@/components/Footer';
 
-export default function Home({ posts }: HomeProps) {
+export default function Home({ posts }: PostArrayProps) {
   return (
     <div className="min-h-screen">
       <Header></Header>
@@ -26,7 +26,7 @@ export default function Home({ posts }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts('sort=id:desc');
 
   return {
     props: { posts },
