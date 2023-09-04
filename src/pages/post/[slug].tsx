@@ -22,10 +22,6 @@ export default function DynamicPost({ post }: PostProps) {
   );
 }
 
-// export default function DynamicPost({ post }: PostProps) {
-//   return <div>{post.attributes.slug}</div>;
-// }
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const numberOfPosts = await countAllPosts();
   const posts = await getAllPosts(`sort=id:desc&pagination[limit]=${numberOfPosts}`);
@@ -38,12 +34,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 };
 
 export const getStaticProps: GetStaticProps<PostProps> = async (ctx) => {
-  const slug = ctx.params?.slug as string; // Ensure that slug is treated as a string
+  const slug = ctx.params?.slug as string;
 
   if (!slug) {
     return {
