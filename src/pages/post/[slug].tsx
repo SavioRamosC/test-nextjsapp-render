@@ -54,6 +54,8 @@ export const getStaticProps: GetStaticProps<PostProps> = async (ctx) => {
 
   const posts = await getPost(slug);
 
+  console.log(`Current slug: ${posts[0]}`);
+
   return {
     props: { post: posts[0] },
     revalidate: 3600,
