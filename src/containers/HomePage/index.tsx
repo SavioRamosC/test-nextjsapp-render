@@ -1,5 +1,6 @@
 import HomeContainer from '@/components/HomeContainer/index';
 import { PostArrayProps } from '@/types/post-props';
+import { modifyImageUrl } from '@/utils/modify-image-size';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,7 +16,7 @@ export default function HomePage({ posts }: PostArrayProps) {
             className="hover:cursor-pointer hover:opacity-50"
             width={320}
             height={180}
-            src={`/api/process-image?src=${encodeURIComponent(post.attributes.cover.data.attributes.url)}`}
+            src={modifyImageUrl(post.attributes.cover.data.attributes.url)}
             alt={post.attributes.cover.data.attributes.name}
           />
         </Link>
