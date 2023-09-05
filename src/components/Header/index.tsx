@@ -13,9 +13,9 @@ export default function Header() {
     <header className="fixed w-full bg-primary text-white py-3">
       <ul className="flex">
         <li className="ml-auto transition duration-300 hover:bg-secondary py-2 px-12 rounded-lg cursor-pointer">
-          <div className="h-full w-full">
-            <Link href="/">Home</Link>
-          </div>
+          <Link className="bg-red-600 w-full h-full flex" href="/">
+            Home
+          </Link>
         </li>
         <li className="m-auto transition duration-300 hover:bg-secondary py-2 px-12 rounded-lg cursor-pointer">
           <Link href="/">Posts</Link>
