@@ -5,11 +5,11 @@ import Image from 'next/image';
 export default function PostPage({ post }: PostProps) {
   return (
     <PostPageContainer>
-      <div className="m-auto group flex flex-col" key={post.attributes.slug}>
+      <div className="m-auto group flex flex-col items-center" key={post.attributes.slug}>
         <Image
-          className="h-56 w-96 mx-auto mb-4 hover:cursor-pointer border-solid border-opacity-5 border-secondary hover:border-2"
-          width={320}
-          height={180}
+          className="mb-4 justify-center hover:cursor-pointer hover:opacity-50"
+          width={640}
+          height={360}
           src={post.attributes.cover.data.attributes.url}
           alt={post.attributes.cover.data.attributes.name}
         />
