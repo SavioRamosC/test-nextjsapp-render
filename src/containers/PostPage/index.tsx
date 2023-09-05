@@ -8,6 +8,8 @@ export default function PostPage({ post }: PostProps) {
       <div className="m-auto group flex flex-col" key={post.attributes.slug}>
         <Image
           className="h-56 w-96 mx-auto mb-4 hover:cursor-pointer border-solid border-opacity-5 border-secondary hover:border-2"
+          width={320}
+          height={180}
           src={post.attributes.cover.data.attributes.url}
           alt={post.attributes.cover.data.attributes.name}
         />

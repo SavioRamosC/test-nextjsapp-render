@@ -15,6 +15,8 @@ export default function HomePage({ posts }: PostArrayProps) {
               </h2>
               <Image
                 className="h-40 w-full hover:cursor-pointer border-solid border-opacity-5 border-secondary hover:border-2"
+                width={320}
+                height={180}
                 src={post.attributes.cover.data.attributes.url}
                 alt={post.attributes.cover.data.attributes.name}
               />
