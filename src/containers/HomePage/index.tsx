@@ -15,7 +15,7 @@ export default function HomePage({ posts }: PostArrayProps) {
             className="hover:cursor-pointer hover:opacity-50"
             width={320}
             height={180}
-            src={post.attributes.cover.data.attributes.url}
+            src={`/api/process-image?src=${encodeURIComponent(post.attributes.cover.data.attributes.url)}`}
             alt={post.attributes.cover.data.attributes.name}
           />
         </Link>
