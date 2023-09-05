@@ -8,18 +8,16 @@ export default function HomePage({ posts }: PostArrayProps) {
     <HomeContainer>
       {posts.map((post) => (
         <Link className="m-auto" key={post.attributes.slug} href={`/post/${post.attributes.slug}`}>
-          <div>
-            <h2 className="py-4 text-center md:text-left flex items-center justify-center md:justify-start group-hover:cursor-pointer">
-              {post.attributes.title}
-            </h2>
-            <Image
-              className="hover:cursor-pointer hover:opacity-50"
-              width={320}
-              height={180}
-              src={post.attributes.cover.data.attributes.url}
-              alt={post.attributes.cover.data.attributes.name}
-            />
-          </div>
+          <h2 className="py-4 text-center md:text-left flex items-center justify-center md:justify-start group-hover:cursor-pointer">
+            {post.attributes.title}
+          </h2>
+          <Image
+            className="hover:cursor-pointer hover:opacity-50"
+            width={320}
+            height={180}
+            src={post.attributes.cover.data.attributes.url}
+            alt={post.attributes.cover.data.attributes.name}
+          />
         </Link>
       ))}
     </HomeContainer>
