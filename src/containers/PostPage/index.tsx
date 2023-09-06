@@ -1,11 +1,10 @@
-import PostPageContainer from '@/components/PostPageContainer';
 import { PostProps } from '@/types/post-props';
 import { modifyImageSize } from '@/utils/modify-image-size';
 import Image from 'next/image';
 
 export default function PostPage({ post }: PostProps) {
   return (
-    <PostPageContainer>
+    <main className="min-h-screen py-20 px-20">
       <div className="m-auto group flex flex-col items-center" key={post.attributes.slug}>
         <Image
           className="mb-4 justify-center hover:cursor-pointer hover:opacity-50"
@@ -21,6 +20,6 @@ export default function PostPage({ post }: PostProps) {
           <div className="text-justify" dangerouslySetInnerHTML={{ __html: post.attributes.content }}></div>
         </div>
       </div>
-    </PostPageContainer>
+    </main>
   );
 }
