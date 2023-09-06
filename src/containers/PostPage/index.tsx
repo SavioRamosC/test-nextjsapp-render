@@ -1,5 +1,6 @@
 import PostPageContainer from '@/components/PostPageContainer';
 import { PostProps } from '@/types/post-props';
+import { modifyImageSize } from '@/utils/modify-image-size';
 import Image from 'next/image';
 
 export default function PostPage({ post }: PostProps) {
@@ -10,7 +11,7 @@ export default function PostPage({ post }: PostProps) {
           className="mb-4 justify-center hover:cursor-pointer hover:opacity-50"
           width={640}
           height={360}
-          src={post.attributes.cover.data.attributes.url}
+          src={modifyImageSize(post.attributes.cover.data.attributes.url, 640, 360)}
           alt={post.attributes.cover.data.attributes.name}
         />
         <div className="text-center">
