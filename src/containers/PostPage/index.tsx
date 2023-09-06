@@ -18,7 +18,7 @@ export default function PostPage({ post }: PostProps) {
           <h1 className="text-3xl flex justify-center md:text-4xl lg:text-5xl font-bold py-4">
             {post.attributes.title}
           </h1>
-          <p className="text-justify">{post.attributes.content}</p>
+          <div className="text-justify" dangerouslySetInnerHTML={{ __html: post.attributes.content }}></div>
         </div>
       </div>
     </PostPageContainer>
