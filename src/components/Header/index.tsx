@@ -13,17 +13,17 @@ export default function Header() {
     <header className="fixed w-full bg-primary text-white py-3">
       <ul className="flex justify-center items-center">
         <li className="md:ml-auto transition duration-300 hover:bg-secondary rounded-lg">
-          <Link className="w-full h-full flex py-2 px-12 rounded-lg" href="/">
+          <Link className="w-full h-full flex py-2 md:px-12 px-4 rounded-lg" href="/">
             Home
           </Link>
         </li>
         <li className="md:m-auto transition duration-300 hover:bg-secondary rounded-lg">
-          <Link className="w-full h-full flex py-2 px-12 rounded-lg" href="/">
+          <Link className="w-full h-full flex py-2 md:px-12 px-4 rounded-lg" href="/">
             Posts
           </Link>
         </li>
         <li className="md:mr-auto transition duration-300 hover:bg-secondary rounded-lg">
-          <Link className="w-full h-full flex py-2 px-12 rounded-lg" href="/about">
+          <Link className="w-full h-full flex py-2 md:px-12 px-4 rounded-lg" href="/about">
             About
           </Link>
         </li>
