@@ -11,7 +11,7 @@ export default function Home({ posts }: PostArrayProps) {
   return (
     <div className="min-h-screen">
       <Head>
-        <title>{`${process.env.SITE_NAME}`}</title>
+        <title>{process.env.SITE_NAME}</title>
       </Head>
       <Header></Header>
       <HomePage posts={posts}></HomePage>
