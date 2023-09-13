@@ -7,8 +7,8 @@ export default function HomePage({ posts }: PostArrayProps) {
   return (
     <main className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 min-h-screen py-20 px-20">
       {posts.map((post) => (
-        <Link className="m-auto group" key={post.attributes.slug} href={`/post/${post.attributes.slug}`}>
-          <div>
+        <div key={post.attributes.slug} className="relative flex flex-col items-center justify-center">
+          <Link className="m-auto group" href={`/post/${post.attributes.slug}`}>
             <h2 className="py-4 text-center md:text-left flex items-center justify-center md:justify-start group-hover:cursor-pointer">
               {post.attributes.title}
             </h2>
@@ -19,8 +19,8 @@ export default function HomePage({ posts }: PostArrayProps) {
               src={modifyImageSize(post.attributes.cover.data.attributes.url, 320, 180)}
               alt={post.attributes.cover.data.attributes.name}
             />
-          </div>
-        </Link>
+          </Link>
+        </div>
       ))}
     </main>
   );
