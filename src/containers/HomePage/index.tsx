@@ -8,7 +8,7 @@ export default function HomePage({ posts }: PostArrayProps) {
     <main className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 min-h-screen py-20 px-20">
       {posts.map((post) => (
         <Link className="m-auto group" key={post.attributes.slug} href={`/post/${post.attributes.slug}`}>
-          <div className="relative">
+          <div>
             <h2 className="py-4 text-center md:text-left flex items-center justify-center md:justify-start group-hover:cursor-pointer">
               {post.attributes.title}
             </h2>
