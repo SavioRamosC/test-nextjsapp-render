@@ -6,10 +6,10 @@ import Link from 'next/link';
 export default function HomePage({ posts }: PostArrayProps) {
   return (
     // <main className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 min-h-screen py-20 px-20">
-    <main className="grid gap-4 md:grid-cols-2 grid-cols-3 min-h-screen py-20 px-20">
+    <main className="grid gap-4 md:grid-cols-2 grid-cols-3 py-20 px-20">
       {posts.map((post) => (
-        <Link className="m-auto group" key={post.attributes.slug} href={`/post/${post.attributes.slug}`}>
-          <h2 className="py-4 text-center md:text-left flex items-center justify-center md:justify-start group-hover:cursor-pointer">
+        <Link className="m-auto" key={post.attributes.slug} href={`/post/${post.attributes.slug}`}>
+          <h2 className="py-4 text-center md:text-left flex items-center justify-center md:justify-start">
             {post.attributes.title}
           </h2>
           <Image
