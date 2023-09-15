@@ -1,7 +1,7 @@
 import '../../app/globals.css';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import PostPage from '@/containers/PostPage';
+import PostPage from '@/components/PostPage';
 import { countAllPosts } from '@/data/posts/count-all-posts';
 import { getAllPosts } from '@/data/posts/get-all-posts';
 import { getPost } from '@/data/posts/get-post';
