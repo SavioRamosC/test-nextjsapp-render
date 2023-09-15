@@ -1,6 +1,6 @@
 import '../app/globals.css';
 import Header from '@/components/Header/index';
-import HomePage from '@/containers/HomePage';
+import HomePage from '@/components/HomePage';
 import { getAllPosts } from '@/data/posts/get-all-posts';
 import { GetStaticProps } from 'next';
 import { PostArrayProps } from '@/types/post-props';
